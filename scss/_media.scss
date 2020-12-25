@@ -1,0 +1,111 @@
+@mixin heartMedia($size) {
+    .heart {
+        width: $size;
+        height: $size;
+
+        &::before, &::after {
+            width: $size;
+            height: $size; 
+        }
+
+        &::before {
+            top: -($size/2);
+        }
+
+        &::after {
+            left: $size/2;
+        }
+    }
+}
+
+@media (max-width: 1450px) {
+    .step__title {
+        font-size: 7rem;
+    }
+
+    // Main-word animation
+    @include letterAnimationPoints(7rem, 9rem, 8rem);
+}
+
+@media (max-width: 1350px) {
+    // Content
+    .step__title {
+        font-size: 6rem;
+    }
+
+    // Main-word animation
+    @include letterAnimationPoints(6rem, 8rem, 7rem);
+}
+
+@media (max-width: 1000px) {
+    // Intro
+    .intro .intro__title {
+        font-size: 8rem;
+    }
+
+    // Content
+    .step__title {
+        font-size: 5rem;
+    }
+
+    // Heart
+    @include heartMedia(18rem);
+
+    // Main-word animation
+    @include letterAnimationPoints(5rem, 7rem, 6rem);
+}
+
+@media (max-width: 736px) {
+    // Intro
+    .intro .intro__title {
+        font-size: 6rem;
+    }
+
+    // Content
+    .step__title {
+        font-size: 3.6rem;
+        text-shadow: -3px 2px 4px black;
+
+        span {
+            text-shadow: -3px 2px 4px $btnColor;
+        }
+    }
+
+    .step__next-btn {
+        padding: 1.6rem;
+    }
+
+    // Heart
+    @include heartMedia(10rem);
+
+    // Main-word animation
+    @include letterAnimationPoints(3.6rem, 5.6rem, 4.6rem);
+}
+
+@media (max-width: 414px) {
+    // Intro
+    .intro .intro__title {
+        font-size: 4.6rem;
+    }
+
+    // Content
+    .content__step {
+        padding: 3rem;
+    }
+
+    .step__title {
+        font-size: 3.2rem;
+        text-shadow: -2px 1px 4px black;
+
+        span {
+            text-shadow: -2px 1px 4px $btnColor;
+        }
+    }
+
+    .content__step--25 .step__title {
+        font-size: 2.7rem;
+    }
+
+    // Main-word animation
+    @include letterAnimationPoints(3.2rem, 3.5rem, 3.3rem);
+}

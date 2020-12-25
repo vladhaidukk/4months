@@ -1,0 +1,22 @@
+@mixin letterAnimationPoints($first, $second, $third) {
+    @keyframes letter_animation {
+        0% {
+            font-size: $first;
+        }
+        50% {
+            font-size: $second;
+        }
+        100% {
+            font-size: $third;
+        }
+    }
+}
+
+.step__title span.main-word {
+    animation-name: letter_animation;
+    animation-duration: 1.5s;
+    animation-delay: .7s;
+    animation-fill-mode: forwards;
+}
+
+@include letterAnimationPoints(8rem, 10rem, 9rem);
