@@ -26,7 +26,7 @@ $(document).ready(function() {
     $(".intro__title").click(function() {
         $(".intro").fadeOut(1500);
         $(".content").slideDown(1200);
-        $(".content__step--26").show();
+        $(".content__step--0").show();
     });
 
     // Move forward on CONTENT
